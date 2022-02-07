@@ -1,23 +1,27 @@
 import React from "react";
-import NavListItem from "./NavListItem";
+import { Link } from "react-router-dom";
 import "../styles/Header.scss";
 import CartIcon from "./CartIcon";
 
-const Header = ({ setCurrentCategory }) => {
+const Header = () => {
   return (
     <nav id="navbar" className="nav">
-      <p onClick={(e) => setCurrentCategory("All")}>Sparkles</p>
+      <Link to="/">
+        <p>Sparkles</p>
+      </Link>
       <ul className="nav-list">
-        <NavListItem title={"New"} setCurrentCategory={setCurrentCategory} />
-        <NavListItem
-          title={"Collections"}
-          setCurrentCategory={setCurrentCategory}
-        />
-        <NavListItem
-          title={"Engagement"}
-          setCurrentCategory={setCurrentCategory}
-        />
-        <NavListItem title={"Sale"} setCurrentCategory={setCurrentCategory} />
+        <Link className="nav-link" to="/new">
+          New
+        </Link>
+        <Link className="nav-link" to="/collections">
+          Collections
+        </Link>
+        <Link className="nav-link" to="/engagement">
+          Engagement
+        </Link>
+        <Link className="nav-link" to="/sale">
+          Sale
+        </Link>
       </ul>
       <CartIcon />
     </nav>
