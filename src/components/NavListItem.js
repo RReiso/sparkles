@@ -1,4 +1,5 @@
 import React from "react";
+import "../styles/NavListItem.scss";
 
 const NavListItem = ({ title, setCurrentCategory }) => {
   return (
