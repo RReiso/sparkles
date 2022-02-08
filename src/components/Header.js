@@ -1,9 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
+import { CartContext } from "../context/Context.js";
 import { Link } from "react-router-dom";
 import "../styles/Header.scss";
 import CartIcon from "./CartIcon";
 
 const Header = () => {
+  const { state, dispatch } = useContext(CartContext);
+
   return (
     <nav id="navbar" className="nav">
       <Link to="/">

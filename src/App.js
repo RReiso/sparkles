@@ -12,11 +12,11 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/all" exact element={<Items category="all" />} />
-        <Route path="/new" element={<Items category="new" />} />
-        <Route path="/gifts" element={<Items category="gifts" />} />
-        <Route path="/luxury" element={<Items category="luxury" />} />
-        <Route path="/sale" element={<Items category="sale" />} />
+        <Route path="/all" exact element={<Items />} />
+        <Route path="/new" element={<Items />} />
+        <Route path="/gifts" element={<Items />} />
+        <Route path="/luxury" element={<Items />} />
+        <Route path="/sale" element={<Items />} />
         <Route path="/cart" element={<Cart />} />
       </Routes>
     </BrowserRouter>

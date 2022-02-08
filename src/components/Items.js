@@ -1,26 +1,32 @@
-import React from "react";
-import products from "../products/products.js";
+import React, { useContext, useEffect } from "react";
+import { useLocation } from "react-router";
+import { CartContext } from "../context/Context.js";
+import SingleItem from "./SingleItem.js";
 
-const Items = ({ category }) => {
+const Items = () => {
+  const { state, dispatch } = useContext(CartContext);
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    dispatch({
+      type: "updateCategory",
+      payload: { category: pathname.substring(1) },
+    });
+  }, [dispatch, pathname]);
+
   return (
     <div>
-      {products.map((pr) => {
+      <p>{state.currentCategory}</p>
+      {state.products.map((pr) => {
         return (
-          pr[category] && (
-            <div>
-              <p>{category}</p>
-              <p>
-                {pr.name.split(" ").map((word) => {
-                  return word[0].toUpperCase() + word.slice(1) + " ";
-                })}
-              </p>
-              <p>{pr.price}</p>
-              <p>{pr.description}</p>
-              <p>
-                {category}: {String(pr[category])}
-              </p>
-              <img src={pr.image} alt="" />
-            </div>
+          pr[state.currentCategory] && (
+            <SingleItem
+              key={pr.id}
+              name={pr.name}
+              price={pr.price}
+              description={pr.description}
+              image={pr.image}
+            />
           )
         );
       })}
