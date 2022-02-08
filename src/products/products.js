@@ -12,9 +12,9 @@ const products = images.map((image, idx) => {
     image: image,
     price: randomFloat(1000, 5000).toFixed(2),
     description: lorem.generateSentences(2),
-    engagement: randomBool(),
-    sale: randomBool(),
-    new: randomBool(),
+    gifts: randomBool(),
+    sale: randomBool({ likelihood: 30 }),
+    new: randomBool({ likelihood: 30 }),
     luxury: randomBool(),
     all: true,
   };

@@ -10,14 +10,17 @@ const Header = () => {
         <p>Sparkles</p>
       </Link>
       <ul className="nav-list">
+        <Link className="nav-link" to="/all">
+          All
+        </Link>
         <Link className="nav-link" to="/new">
           New
         </Link>
         <Link className="nav-link" to="/luxury">
           Luxury
         </Link>
-        <Link className="nav-link" to="/engagement">
-          Engagement
+        <Link className="nav-link" to="/gifts">
+          Gifts
         </Link>
         <Link className="nav-link" to="/sale">
           Sale
