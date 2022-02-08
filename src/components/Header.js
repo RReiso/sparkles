@@ -13,8 +13,8 @@ const Header = () => {
         <Link className="nav-link" to="/new">
           New
         </Link>
-        <Link className="nav-link" to="/collections">
-          Collections
+        <Link className="nav-link" to="/luxury">
+          Luxury
         </Link>
         <Link className="nav-link" to="/engagement">
           Engagement
