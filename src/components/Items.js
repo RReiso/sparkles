@@ -1,37 +1,49 @@
-import React, { useContext, useEffect } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { ShopContext } from "../context/Context.js";
 import SingleItem from "./SingleItem.js";
 
 const Items = () => {
-  const { state, dispatch } = useContext(ShopContext);
+  const { state } = useContext(ShopContext);
   const { pathname } = useLocation();
+  const [currentCategory, setCurrentCategory] = useState("all");
 
   useEffect(() => {
-    dispatch({
-      type: "updateCategory",
-      payload: { category: pathname.substring(1) },
-    });
-  }, [dispatch, pathname]);
+    setCurrentCategory(pathname.substring(1));
+  }, [pathname]);
 
   return (
     <div>
-      <p>{state.currentCategory}</p>
-      {state.products.map((pr) => {
-        return (
-          pr[state.currentCategory] && (
-            <SingleItem
-              key={pr.id}
-              id={pr.id}
-              name={pr.name}
-              price={pr.price}
-              description={pr.description}
-              image={pr.image}
-              inStock={pr.inStock}
-            />
-          )
-        );
-      })}
+      <p>{currentCategory}</p>
+      {currentCategory === "all"
+        ? state.products.map((pr) => {
+            return (
+              <SingleItem
+                key={pr.id}
+                id={pr.id}
+                name={pr.name}
+                price={pr.price}
+                description={pr.description}
+                image={pr.image}
+                inStock={pr.inStock}
+              />
+            );
+          })
+        : state.products.map((pr) => {
+            return (
+              pr[currentCategory] && (
+                <SingleItem
+                  key={pr.id}
+                  id={pr.id}
+                  name={pr.name}
+                  price={pr.price}
+                  description={pr.description}
+                  image={pr.image}
+                  inStock={pr.inStock}
+                />
+              )
+            );
+          })}
     </div>
   );
 };

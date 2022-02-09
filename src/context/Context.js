@@ -27,7 +27,6 @@ const products = images.map((image, idx) => {
     sale: randomBool({ likelihood: 30 }),
     new: randomBool({ likelihood: 30 }),
     luxury: randomBool(),
-    all: true,
   };
 });
 console.log("products", products);
@@ -35,7 +34,6 @@ console.log("products", products);
 const initialState = {
   products,
   cart: [],
-  currentCategory: "all",
 };
 
 const Context = ({ children }) => {

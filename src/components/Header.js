@@ -2,7 +2,7 @@ import React, { useContext } from "react";
 import { ShopContext } from "../context/Context.js";
 import { Link } from "react-router-dom";
 import "../styles/Header.scss";
-import BagIcon from "./BagIcon";
+import ShoppingBag from "./ShoppingBag";
 
 const Header = () => {
   const { state, dispatch } = useContext(ShopContext);
@@ -29,7 +29,7 @@ const Header = () => {
           Sale
         </Link>
       </ul>
-      <BagIcon />
+      <ShoppingBag />
     </nav>
   );
 };
