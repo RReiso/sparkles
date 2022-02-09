@@ -8,10 +8,17 @@ import { shopReducer } from "./Reducers";
 const lorem = new LoremIpsum();
 const ShopContext = createContext();
 
+const capitalize = (words) => {
+  let name = words.split(" ").map((word) => {
+    return `${word[0].toUpperCase()}${word.slice(1)}`;
+  });
+  return name.join(" ");
+};
+
 const products = images.map((image, idx) => {
   return {
     id: idx,
-    name: lorem.generateWords(2),
+    name: capitalize(lorem.generateWords(2)),
     image: image,
     price: randomFloat(1000, 5000).toFixed(2),
     description: lorem.generateSentences(2),
@@ -23,6 +30,7 @@ const products = images.map((image, idx) => {
     all: true,
   };
 });
+console.log("products", products);
 
 const initialState = {
   products,

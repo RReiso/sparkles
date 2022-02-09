@@ -8,7 +8,7 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
   const [isInCart, setIsInCart] = useState(false);
 
   const addToBag = (id, name, image) => {
-    dispatch({ type: "addToBag", payload: { id, name, image } });
+    dispatch({ type: "addToBag", payload: { id, name, image, price } });
     setIsInCart(true);
   };
 
@@ -23,11 +23,7 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
       onMouseEnter={() => setOnhover(true)}
       onMouseLeave={() => setOnhover(false)}
     >
-      <p>
-        {name.split(" ").map((word) => {
-          return `${word[0].toUpperCase()}${word.slice(1)} `;
-        })}
-      </p>
+      <p>{name}</p>
       <p>{price}</p>
       <p>{description}</p>
       <img src={image} alt="" />
@@ -35,7 +31,9 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
         <button onClick={() => removeFromBag(id)}>Remove From Bag</button>
       )}
       {!isInCart && onhover && inStock && (
-        <button onClick={() => addToBag(id, name, image)}>Add To Bag</button>
+        <button onClick={() => addToBag(id, name, image, price)}>
+          Add To Bag
+        </button>
       )}
       {onhover && !inStock && <p>Out of stock</p>}
     </div>

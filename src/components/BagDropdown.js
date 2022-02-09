@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import "../styles/BagIcon.scss";
+import "../styles/BagDropdown.scss";
 import { ShopContext } from "../context/Context.js";
 
 const BagDropdown = () => {
@@ -7,7 +7,20 @@ const BagDropdown = () => {
 
   return (
     <div className="dropdown-content">
-      {state.cart.length > 0 ? <p>Hello World!</p> : <p>no items</p>}
+      {state.cart.length > 0 ? (
+        state.cart.map((item) => (
+          <div className="dropdown-item" key={item.id}>
+            <img src={item.image} alt={`${item.name}`} />
+            <span>{item.name}</span>
+            <span>CAD {item.price}</span>
+            <span>
+              <i className="circle fa fa-solid fa-times-circle"></i>
+            </span>
+          </div>
+        ))
+      ) : (
+        <p>no items</p>
+      )}
     </div>
   );
 };
