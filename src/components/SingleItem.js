@@ -1,20 +1,21 @@
-import React, { useContext, useState, useEffect } from "react";
+import React, { useContext, useState } from "react";
 import { ShopContext } from "../context/Context.js";
 import "../styles/SingleItem.scss";
 
 const SingleItem = ({ id, name, price, description, image, inStock }) => {
-  const { dispatch } = useContext(ShopContext);
+  const { state, dispatch } = useContext(ShopContext);
   const [onhover, setOnhover] = useState(false);
-  const [isInCart, setIsInCart] = useState(false);
+
+  const isInCart = (id) => {
+    return state.cart.some((item) => item.id === id);
+  };
 
   const addToBag = (id, name, image) => {
     dispatch({ type: "addToBag", payload: { id, name, image, price } });
-    setIsInCart(true);
   };
 
-  const removeFromBag = (id) => {
-    dispatch({ type: "removeFromBag", payload: id });
-    setIsInCart(false);
+  const removeFromBag = (id, price) => {
+    dispatch({ type: "removeFromBag", payload: { id, price } });
   };
 
   return (
@@ -27,10 +28,12 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
       <p>{price}</p>
       <p>{description}</p>
       <img src={image} alt="" />
-      {isInCart && onhover && (
-        <button onClick={() => removeFromBag(id)}>Remove From Bag</button>
+      {isInCart(id) && onhover && (
+        <button onClick={() => removeFromBag(id, price)}>
+          Remove From Bag
+        </button>
       )}
-      {!isInCart && onhover && inStock && (
+      {!isInCart(id) && onhover && inStock && (
         <button onClick={() => addToBag(id, name, image, price)}>
           Add To Bag
         </button>

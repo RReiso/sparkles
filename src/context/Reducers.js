@@ -6,11 +6,13 @@ const shopReducer = (state, action) => {
       return {
         ...state,
         cart: [...state.cart, { ...action.payload, quantity: 1 }],
+        totalPrice: state.totalPrice + Number(action.payload.price),
       };
     case "removeFromBag":
       return {
         ...state,
-        cart: [...state.cart.filter((item) => item.id !== action.payload)],
+        cart: [...state.cart.filter((item) => item.id !== action.payload.id)],
+        totalPrice: state.totalPrice - Number(action.payload.price),
       };
     default:
       return state;

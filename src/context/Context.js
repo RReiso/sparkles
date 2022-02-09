@@ -20,7 +20,7 @@ const products = images.map((image, idx) => {
     id: idx,
     name: capitalize(lorem.generateWords(2)),
     image: image,
-    price: randomFloat(1000, 5000).toFixed(2),
+    price: randomFloat(2000, 9999).toFixed(2),
     description: lorem.generateSentences(2),
     inStock: randomBool({ likelihood: 80 }),
     gifts: randomBool(),
@@ -36,6 +36,7 @@ const initialState = {
   products,
   cart: [],
   currentCategory: "all",
+  totalPrice: 0,
 };
 
 const Context = ({ children }) => {
