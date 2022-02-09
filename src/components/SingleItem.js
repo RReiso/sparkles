@@ -15,7 +15,7 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
   };
 
   const removeFromBag = (id, price) => {
-    dispatch({ type: "removeFromBag", payload: { id, price } });
+    dispatch({ type: "removeFromBag", payload: id });
   };
 
   return (
@@ -29,9 +29,7 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
       <p>{description}</p>
       <img src={image} alt="" />
       {isInCart(id) && onhover && (
-        <button onClick={() => removeFromBag(id, price)}>
-          Remove From Bag
-        </button>
+        <button onClick={() => removeFromBag(id)}>Remove From Bag</button>
       )}
       {!isInCart(id) && onhover && inStock && (
         <button onClick={() => addToBag(id, name, image, price)}>

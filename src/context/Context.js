@@ -36,7 +36,6 @@ const initialState = {
   products,
   cart: [],
   currentCategory: "all",
-  totalPrice: 0,
 };
 
 const Context = ({ children }) => {
