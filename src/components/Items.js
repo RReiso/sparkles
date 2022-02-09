@@ -1,4 +1,4 @@
-import React, { useContext, useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { ShopContext } from "../context/Context.js";
 import SingleItem from "./SingleItem.js";
@@ -16,32 +16,13 @@ const Items = () => {
     <div>
       <p>{currentCategory}</p>
       {currentCategory === "all"
-        ? state.products.map((pr) => {
-            return (
-              <SingleItem
-                key={pr.id}
-                id={pr.id}
-                name={pr.name}
-                price={pr.price}
-                description={pr.description}
-                image={pr.image}
-                inStock={pr.inStock}
-              />
-            );
+        ? state.products.map((item) => {
+            return <SingleItem key={item.id} item={item} />;
           })
-        : state.products.map((pr) => {
+        : state.products.map((item) => {
+            //return items with currentCategory(new, sale etc) set to 'true'
             return (
-              pr[currentCategory] && (
-                <SingleItem
-                  key={pr.id}
-                  id={pr.id}
-                  name={pr.name}
-                  price={pr.price}
-                  description={pr.description}
-                  image={pr.image}
-                  inStock={pr.inStock}
-                />
-              )
+              item[currentCategory] && <SingleItem key={item.id} item={item} />
             );
           })}
     </div>

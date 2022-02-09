@@ -1,8 +1,9 @@
-import React, { useContext, useState } from "react";
+import { useContext, useState } from "react";
 import { ShopContext } from "../context/Context.js";
 import "../styles/SingleItem.scss";
 
-const SingleItem = ({ id, name, price, description, image, inStock }) => {
+const SingleItem = ({ item }) => {
+  const { id, name, price, description, image, inStock } = item;
   const { state, dispatch } = useContext(ShopContext);
   const [onhover, setOnhover] = useState(false);
 
@@ -14,7 +15,7 @@ const SingleItem = ({ id, name, price, description, image, inStock }) => {
     dispatch({ type: "addToBag", payload: { id, name, image, price } });
   };
 
-  const removeFromBag = (id, price) => {
+  const removeFromBag = (id) => {
     dispatch({ type: "removeFromBag", payload: id });
   };
 
