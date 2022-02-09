@@ -3,7 +3,7 @@ import { ShopContext } from "../context/Context.js";
 import "../styles/SingleItem.scss";
 
 const SingleItem = ({ id, name, price, description, image, inStock }) => {
-  const { state, dispatch } = useContext(ShopContext);
+  const { dispatch } = useContext(ShopContext);
   const [onhover, setOnhover] = useState(false);
   const [isInCart, setIsInCart] = useState(false);
 
