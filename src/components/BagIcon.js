@@ -1,14 +1,14 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import "../styles/CartIcon.scss";
+import "../styles/BagIcon.scss";
 
-const CartIcon = () => {
+const BagIcon = () => {
   return (
-    <div id="cart-icon">
+    <div id="bag-icon">
       <Link to="/cart">
         <span className="p1 fa-stack fa-2x has-badge" data-count={4}>
           <i
-            className="p3 fa fa-shopping-cart fa-stack-1x xfa-inverse"
+            className="p3 fa fa-shopping-bag fa-stack-1x xfa-inverse"
             data-count="4b"
           ></i>
         </span>
@@ -20,4 +20,4 @@ const CartIcon = () => {
   );
 };
 
-export default CartIcon;
+export default BagIcon;

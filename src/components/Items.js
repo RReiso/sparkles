@@ -1,10 +1,10 @@
 import React, { useContext, useEffect } from "react";
 import { useLocation } from "react-router";
-import { CartContext } from "../context/Context.js";
+import { ShopContext } from "../context/Context.js";
 import SingleItem from "./SingleItem.js";
 
 const Items = () => {
-  const { state, dispatch } = useContext(CartContext);
+  const { state, dispatch } = useContext(ShopContext);
   const { pathname } = useLocation();
 
   useEffect(() => {
@@ -22,10 +22,12 @@ const Items = () => {
           pr[state.currentCategory] && (
             <SingleItem
               key={pr.id}
+              id={pr.id}
               name={pr.name}
               price={pr.price}
               description={pr.description}
               image={pr.image}
+              inStock={pr.inStock}
             />
           )
         );

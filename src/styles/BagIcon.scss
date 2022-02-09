@@ -1,9 +1,9 @@
-#cart-icon {
+#bag-icon {
   cursor: pointer;
   position: relative;
 }
 
-#cart-icon .p1[data-count]:after {
+#bag-icon .p1[data-count]:after {
   position: absolute;
   right: 10%;
   top: 8%;
@@ -30,6 +30,6 @@
   z-index: 1;
 }
 
-#cart-icon:hover .dropdown-content {
+#bag-icon:hover .dropdown-content {
   display: block;
 }

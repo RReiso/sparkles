@@ -3,10 +3,10 @@ import randomFloat from "random-float";
 import { LoremIpsum } from "lorem-ipsum";
 import randomBool from "random-bool";
 import images from "../products/images";
-import { cartReducer } from "./Reducers";
+import { shopReducer } from "./Reducers";
 
 const lorem = new LoremIpsum();
-const CartContext = createContext();
+const ShopContext = createContext();
 
 const products = images.map((image, idx) => {
   return {
@@ -15,6 +15,7 @@ const products = images.map((image, idx) => {
     image: image,
     price: randomFloat(1000, 5000).toFixed(2),
     description: lorem.generateSentences(2),
+    inStock: randomBool({ likelihood: 80 }),
     gifts: randomBool(),
     sale: randomBool({ likelihood: 30 }),
     new: randomBool({ likelihood: 30 }),
@@ -30,14 +31,14 @@ const initialState = {
 };
 
 const Context = ({ children }) => {
-  const [state, dispatch] = useReducer(cartReducer, initialState);
+  const [state, dispatch] = useReducer(shopReducer, initialState);
 
   return (
-    <CartContext.Provider value={{ state, dispatch }}>
+    <ShopContext.Provider value={{ state, dispatch }}>
       {children}
-    </CartContext.Provider>
+    </ShopContext.Provider>
   );
 };
 
 export default Context;
-export { CartContext };
+export { ShopContext };

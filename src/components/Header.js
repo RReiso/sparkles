@@ -1,11 +1,11 @@
 import React, { useContext } from "react";
-import { CartContext } from "../context/Context.js";
+import { ShopContext } from "../context/Context.js";
 import { Link } from "react-router-dom";
 import "../styles/Header.scss";
-import CartIcon from "./CartIcon";
+import BagIcon from "./BagIcon";
 
 const Header = () => {
-  const { state, dispatch } = useContext(CartContext);
+  const { state, dispatch } = useContext(ShopContext);
 
   return (
     <nav id="navbar" className="nav">
@@ -29,7 +29,7 @@ const Header = () => {
           Sale
         </Link>
       </ul>
-      <CartIcon />
+      <BagIcon />
     </nav>
   );
 };
