@@ -1,12 +1,8 @@
-import { useContext } from "react";
-import { ShopContext } from "../context/Context.js";
 import { Link } from "react-router-dom";
 import "../styles/Header.scss";
 import ShoppingBag from "./ShoppingBag";
 
 const Header = () => {
-  const { state, dispatch } = useContext(ShopContext);
-
   return (
     <nav id="navbar" className="nav">
       <Link to="/">

@@ -4,7 +4,7 @@ import { ShopContext } from "../context/Context.js";
 import CartItem from "./CartItem.js";
 
 const Cart = () => {
-  const { state, dispatch } = useContext(ShopContext);
+  const { state } = useContext(ShopContext);
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
