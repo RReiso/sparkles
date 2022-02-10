@@ -22,14 +22,13 @@ const products = images.map((image, idx) => {
     image: image,
     price: randomFloat(2000, 9999).toFixed(2),
     description: lorem.generateSentences(2),
-    inStock: randomBool({ likelihood: 80 }),
+    inStock: randomBool({ likelihood: 85 }),
     gifts: randomBool(),
     sale: randomBool({ likelihood: 30 }),
     new: randomBool({ likelihood: 30 }),
     luxury: randomBool(),
   };
 });
-console.log("products", products);
 
 const initialState = {
   products,

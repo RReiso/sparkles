@@ -20,7 +20,7 @@ const SingleItem = ({ item }) => {
   };
 
   return (
-    <div
+    <article
       className="item"
       onMouseEnter={() => setOnhover(true)}
       onMouseLeave={() => setOnhover(false)}
@@ -38,7 +38,7 @@ const SingleItem = ({ item }) => {
         </button>
       )}
       {onhover && !inStock && <p>Out of stock</p>}
-    </div>
+    </article>
   );
 };
 

@@ -9,21 +9,31 @@ const Header = () => {
         <p>Sparkles</p>
       </Link>
       <ul className="nav-list">
-        <Link className="nav-link" to="/all">
-          All
-        </Link>
-        <Link className="nav-link" to="/new">
-          New
-        </Link>
-        <Link className="nav-link" to="/luxury">
-          Luxury
-        </Link>
-        <Link className="nav-link" to="/gifts">
-          Gifts
-        </Link>
-        <Link className="nav-link" to="/sale">
-          Sale
-        </Link>
+        <li>
+          <Link className="nav-link" to="/all">
+            All
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/new">
+            New
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/luxury">
+            Luxury
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/gifts">
+            Gifts
+          </Link>
+        </li>
+        <li>
+          <Link className="nav-link" to="/sale">
+            Sale
+          </Link>
+        </li>
       </ul>
       <ShoppingBag />
     </nav>

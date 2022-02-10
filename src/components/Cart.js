@@ -8,7 +8,6 @@ const Cart = () => {
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
-  console.log("state.cart", state.cart);
 
   useEffect(() => {
     const total = state.cart.reduce(
@@ -23,12 +22,11 @@ const Cart = () => {
   }, [subtotal]);
 
   useEffect(() => {
-    console.log("typeof tax", typeof tax);
     setTotal(subtotal + tax);
   }, [subtotal, tax]);
 
   return (
-    <div className="cart-items">
+    <section className="order">
       {state.cart.length > 0 ? (
         <>
           {state.cart.map((item) => (
@@ -51,7 +49,7 @@ const Cart = () => {
               day delivery available for orders before 12pm
             </p>
             <p>
-              <i class="fa fa-gift" aria-hidden="true"></i>Gift options
+              <i className="fa fa-gift" aria-hidden="true"></i>Gift options
               available
             </p>
           </div>
@@ -71,11 +69,11 @@ const Cart = () => {
         </>
       ) : (
         <>
-          <p>Your bag is empty!</p>
-          <Link to="/all">Start shopping!</Link>
+          <p>Your bag is currently empty</p>
+          <Link to="/all">Start shopping</Link>
         </>
       )}
-    </div>
+    </section>
   );
 };
 

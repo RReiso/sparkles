@@ -15,20 +15,18 @@ const CartItem = ({ id, name, image, price, quantity }) => {
   };
 
   return (
-    <div className="cart-item">
-      <div className="cart-item-details">
-        <img src={image} alt={name} />
-        <span>{name}</span>
-        <span>CAD {price}</span>
-        <button onClick={() => updateQuantity(id, quantity - 1)}>-</button>
-        <span>{quantity}</span>
-        <button onClick={() => updateQuantity(id, quantity + 1)}>+</button>
-        <span>CAD {(price * quantity).toFixed(2)}</span>
-        <span onClick={() => removeFromBag(id)}>
-          <i className="circle fa fa-solid fa-times-circle"></i>
-        </span>
-      </div>
-    </div>
+    <article className="cart-item">
+      <img src={image} alt={name} />
+      <span>{name}</span>
+      <span>CAD {price}</span>
+      <button onClick={() => updateQuantity(id, quantity - 1)}>-</button>
+      <span>{quantity}</span>
+      <button onClick={() => updateQuantity(id, quantity + 1)}>+</button>
+      <span>CAD {(price * quantity).toFixed(2)}</span>
+      <span onClick={() => removeFromBag(id)}>
+        <i className="circle fa fa-solid fa-times-circle"></i>
+      </span>
+    </article>
   );
 };
 

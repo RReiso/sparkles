@@ -1,0 +1,18 @@
+.home-images {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.icons {
+  margin: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
+}
+
+.icons img {
+  width: 5rem;
+  height: 5rem;
+}

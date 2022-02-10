@@ -22,14 +22,14 @@ const BagDropdown = () => {
       {state.cart.length > 0 ? (
         <>
           {state.cart.map((item) => (
-            <div className="dropdown-item" key={item.id}>
+            <article className="dropdown-item" key={item.id}>
               <img src={item.image} alt={`${item.name}`} />
               <span>{item.name}</span>
               <span>CAD {item.price}</span>
               <span onClick={() => removeFromBag(item.id)}>
                 <i className="circle fa fa-solid fa-times-circle"></i>
               </span>
-            </div>
+            </article>
           ))}
           <p>Subtotal: {subtotal}</p>
         </>
