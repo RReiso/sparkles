@@ -24,7 +24,7 @@ const products = images.map((image, idx) => {
     description: lorem.generateSentences(2),
     inStock: randomBool({ likelihood: 85 }),
     gifts: randomBool(),
-    sale: randomBool({ likelihood: 30 }),
+    sale: randomBool({ likelihood: 20 }),
     new: randomBool({ likelihood: 30 }),
     luxury: randomBool(),
   };
