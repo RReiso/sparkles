@@ -1,5 +1,5 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../styles/BagDropdown.scss";
+import "../styles/components/BagDropdown.scss";
 import { ShopContext } from "../context/Context.js";
 
 const BagDropdown = () => {

@@ -1,1 +1,3 @@
-@use "./reset.scss";
+@forward "./base/reset.scss";
+@forward "./abstracts/variables.scss";
+@forward "./abstracts/mixins.scss";

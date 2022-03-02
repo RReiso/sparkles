@@ -1,6 +1,6 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/ShoppingBag.scss";
+import "../styles/components/ShoppingBag.scss";
 import { ShopContext } from "../context/Context.js";
 import BagDropdown from "./BagDropdown";
 

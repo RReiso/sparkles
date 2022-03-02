@@ -1,6 +1,6 @@
 import { useContext, useState, useEffect } from "react";
 import { ShopContext } from "../context/Context.js";
-import "../styles/SingleItem.scss";
+import "../styles/components/SingleItem.scss";
 
 const SingleItem = ({ item }) => {
   const { id, name, price, description, image, inStock, sale } = item;

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import homeImages from "../products/homeImages";
-import "../styles/Home.scss";
+import "../styles/pages/Home.scss";
 
 const Home = () => {
   const [img1, img2, img3, img4, img5, icon1, icon2, icon3, icon4, icon5] =
