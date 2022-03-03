@@ -3,26 +3,24 @@
 #bag-icon {
   cursor: pointer;
   position: relative;
-}
-
-#bag-icon .p1[data-count]:after {
-  background: $primary;
-  border-radius: 50%;
-  color: $light;
-  content: attr(data-count);
-  font-size: 1rem;
-  font-weight: bold;
-  line-height: 1rem;
-  min-width: 1rem;
-  padding: 0.2rem 0.4rem;
-  position: absolute;
-  right: 10%;
-  text-align: center;
-  top: 8%;
-}
-
-#bag-icon:hover .dropdown-content {
-  display: none;
+  .p1[data-count]:after {
+    background: $primary;
+    border-radius: 50%;
+    color: $light;
+    content: attr(data-count);
+    font-size: 1rem;
+    font-weight: bold;
+    line-height: 1rem;
+    min-width: 1rem;
+    padding: 0.2rem 0.4rem;
+    position: absolute;
+    right: 10%;
+    text-align: center;
+    top: 8%;
+  }
+  &:hover .dropdown-content {
+    display: none;
+  }
 }
 
 .d-nav {

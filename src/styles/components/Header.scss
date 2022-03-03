@@ -1,46 +1,48 @@
 @use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
 
-.nav-list {
-  display: flex;
-  list-style-type: none;
-  li {
-    padding: 0.25rem 0.5rem;
-    &:hover {
-      color: $primary;
-    }
-  }
-}
-
 .nav-line {
-  font-size: 1.125rem;
-
-  position: fixed;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100vw;
-  height: 4rem;
-  display: flex;
   align-items: center;
   background-color: $light;
-  -webkit-box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
-  box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
+  display: flex;
+  font-size: 1.125rem;
+  height: 4rem;
+  position: fixed;
+  left: 0;
+  right: 0;
+  top: 0;
+  width: 100vw;
   z-index: 100;
+  @include shadow;
 }
 
 #hamburger {
-  margin: 0.25rem;
-  padding: 0.25rem 1rem;
   background-color: var(--color-green);
-  font-size: 1.5rem;
-  cursor: pointer;
-  outline: none;
   border: none;
+  cursor: pointer;
+  font-size: 1.5rem;
+  margin: 0.25rem;
+  outline: none;
+  padding: 0.25rem 1rem;
+  &:focus-visible {
+    outline: 2px solid $dark;
+  }
 }
 
-#ham:focus-visible {
-  outline: 2px solid $dark;
+.nav-list {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  list-style: none;
+  padding: 0.5rem 0;
+  width: 100%;
+  li {
+    padding: 0.25rem 0.5rem;
+    a:hover {
+      color: $primary;
+    }
+  }
 }
 
 .nav-title {
@@ -50,82 +52,42 @@
 }
 
 .nav {
+  background: $light;
   font-size: 1.125rem;
-
+  height: fit-content;
   padding: 0 2rem;
   position: fixed;
-  top: 4rem;
-  width: 100vw;
-  height: fit-content;
-  background: $light;
-  -webkit-box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
-  box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
   transform: translateY(-130%);
   transition: transform 0.2s ease;
+  top: 4rem;
+  width: 100vw;
   z-index: 99;
+  @include shadow;
 }
 
 .showNav {
   transform: translateY(0);
 }
 
-.nav-list {
-  padding: 0.5rem 0;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  list-style: none;
-}
-
-.nav-link a {
-  display: block;
-  margin-top: 1rem;
-  font-size: 1.25rem;
-  text-decoration: none;
-}
-
-.nav-link a:hover {
-  opacity: 0.7;
-}
-
-.nav-link a:focus-visible {
-  outline: 2px solid var(--color-dark);
-}
-
-.nav-link a:active {
-  outline: none;
-}
-
 @media (min-width: 43.75em) {
-  /* || NAVIAGTION */
-
-  // nav {
-  //   display: flex;
-  // }
   .nav-line {
     display: none;
   }
 
   .nav {
-    height: 4rem;
+    background: $light;
     display: flex;
     align-items: center;
+    height: 4rem;
     justify-content: space-between;
-    transform: translateY(0%);
-    top: 0rem;
     left: 0rem;
+    top: 0rem;
+    transform: translateY(0%);
     width: 100%;
-    background: $light;
-    border-bottom: none;
-    -webkit-box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
-    box-shadow: 0px 4px 4px -3px rgba(0, 0, 0, 0.253);
-    // z-index: 101;
   }
 
   .nav-list {
     flex-direction: row;
     justify-content: center;
-    font-size: 1.125rem;
   }
 }
