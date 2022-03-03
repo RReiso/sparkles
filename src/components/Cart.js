@@ -25,6 +25,10 @@ const Cart = () => {
     setTotal(subtotal + tax);
   }, [subtotal, tax]);
 
+  const handleCheckout = () => {
+    alert("Thank you for your order!");
+  };
+
   return (
     <section className="order">
       {state.cart.length > 0 ? (
@@ -64,7 +68,9 @@ const Cart = () => {
             <p>
               Order Total:<span>{total.toFixed(2)}</span>
             </p>
-            <button className="btn btn-warning">CHECKOUT</button>
+            <button onClick={handleCheckout} className="btn btn-warning">
+              CHECKOUT
+            </button>
           </div>
         </>
       ) : (

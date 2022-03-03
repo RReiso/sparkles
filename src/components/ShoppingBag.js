@@ -1,10 +1,10 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
-import "../styles/components/ShoppingBag.scss";
 import { ShopContext } from "../context/Context.js";
 import BagDropdown from "./BagDropdown";
+import "../styles/components/ShoppingBag.scss";
 
-const ShoppingBag = () => {
+const ShoppingBag = ({ hamNav }) => {
   const { state } = useContext(ShopContext);
   const [totalBagItems, setTotalBagItems] = useState(0);
 
@@ -16,7 +16,7 @@ const ShoppingBag = () => {
   }, [state.cart]);
 
   return (
-    <div id="bag-icon">
+    <div id="bag-icon" className={hamNav ? "ham-bag" : "d-nav"}>
       <Link to="/cart">
         <span
           className="p1 fa-stack fa-2x has-badge"

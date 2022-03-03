@@ -2,7 +2,13 @@ $pink: #d43a87;
 $blue: #008b82;
 $gold: #dbaf37;
 $black: #110f11;
-$white: #fcf6fb;
+$white: #faf5fc;
+
+$primary: $pink;
+$secondary: $blue;
+$warning: $gold;
+$dark: $black;
+$light: $white;
 
 $theme-colors: (
   "primary": $pink,

@@ -1,6 +1,6 @@
 import React, { useContext, useEffect, useState } from "react";
-import "../styles/components/BagDropdown.scss";
 import { ShopContext } from "../context/Context.js";
+import "../styles/components/BagDropdown.scss";
 
 const BagDropdown = () => {
   const { state, dispatch } = useContext(ShopContext);

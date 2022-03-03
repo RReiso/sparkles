@@ -1,24 +1,44 @@
+@use "../abstracts/variables.scss" as *;
+
 #bag-icon {
   cursor: pointer;
   position: relative;
 }
 
 #bag-icon .p1[data-count]:after {
-  position: absolute;
-  right: 10%;
-  top: 8%;
+  background: $primary;
+  border-radius: 50%;
+  color: $light;
   content: attr(data-count);
   font-size: 1rem;
-  padding: 0.2rem 0.4rem;
-  border-radius: 50%;
-  line-height: 1rem;
-  color: white;
-  background: #d43a87;
-  text-align: center;
-  min-width: 1rem;
   font-weight: bold;
+  line-height: 1rem;
+  min-width: 1rem;
+  padding: 0.2rem 0.4rem;
+  position: absolute;
+  right: 10%;
+  text-align: center;
+  top: 8%;
 }
 
 #bag-icon:hover .dropdown-content {
-  display: block;
+  display: none;
+}
+
+.d-nav {
+  display: none;
+}
+
+.ham-bag {
+  margin: 0 1rem 0 auto;
+}
+
+@media (min-width: 43.75em) {
+  #bag-icon:hover .dropdown-content {
+    display: block;
+  }
+
+  .d-nav {
+    display: block;
+  }
 }
