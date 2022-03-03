@@ -1,0 +1,8 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
+@each $color, $value in $theme-colors {
+  .btn-#{$color} {
+    @include btn($value);
+  }
+} ;

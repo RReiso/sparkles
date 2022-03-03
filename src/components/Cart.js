@@ -64,7 +64,7 @@ const Cart = () => {
             <p>
               Order Total:<span>{total.toFixed(2)}</span>
             </p>
-            <button>CHECKOUT</button>
+            <button className="btn btn-warning">CHECKOUT</button>
           </div>
         </>
       ) : (
