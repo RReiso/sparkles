@@ -1,18 +1,64 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+@import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
+
+.intro-line {
+  padding: 1.5rem 1rem;
+  letter-spacing: 1px;
+  font-weight: 400;
+  line-height: 30px;
+}
+
 .home-images {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-wrap: wrap;
+  img {
+    width: 100%;
+  }
+}
+
+.explore {
+  margin: 1rem 1rem 0;
+  font-family: "Comforter";
+  letter-spacing: 2px;
+  font-weight: 600;
+  font-size: 1.5rem;
 }
 
 .icons {
-  margin: 1rem;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  margin: 1rem 1rem 1.5rem;
+  .icon {
+    padding-top: 0.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+  img {
+    max-width: 4rem;
+    height: 4rem;
+    padding-bottom: 0.25rem;
+  }
 }
 
-.icons img {
-  width: 5rem;
-  height: 5rem;
+@media (min-width: 41em) {
+  .home-images img {
+    width: 20rem;
+  }
+
+  .explore {
+    display: none;
+  }
+
+  .icons {
+    img {
+      max-width: 5rem;
+      height: 5rem;
+    }
+  }
 }
