@@ -2,20 +2,27 @@
 @use "../abstracts/mixins.scss" as *;
 @import url("https://fonts.googleapis.com/css2?family=Comforter&display=swap");
 
-.intro-line {
-  padding: 1.5rem 1rem;
-  letter-spacing: 1px;
-  font-weight: 400;
-  line-height: 30px;
+.intro {
+  margin: 1rem 1rem 2rem;
+  padding: 0.5rem 0;
+  &-line {
+    letter-spacing: 1px;
+    font-weight: 400;
+    line-height: 30px;
+  }
 }
 
 .home-images {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-wrap: wrap;
+  @include flex-center;
+  background-color: $white;
   img {
     width: 100%;
+  }
+  &-small {
+    @include flex-center;
+    img {
+      min-height: 15rem;
+    }
   }
 }
 
@@ -34,31 +41,28 @@
   margin: 1rem 1rem 1.5rem;
   .icon {
     padding-top: 0.5rem;
+    margin: 0.5rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
   }
   img {
-    max-width: 4rem;
-    height: 4rem;
-    padding-bottom: 0.25rem;
+    max-width: 5rem;
+    height: 6rem;
+    padding-bottom: 1rem;
   }
 }
 
 @media (min-width: 41em) {
+  .intro {
+    margin: 1rem 6rem 2rem;
+  }
   .home-images img {
     width: 20rem;
   }
 
   .explore {
     display: none;
-  }
-
-  .icons {
-    img {
-      max-width: 5rem;
-      height: 5rem;
-    }
   }
 }

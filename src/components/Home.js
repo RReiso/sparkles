@@ -7,17 +7,22 @@ const Home = () => {
     homeImages;
   return (
     <main>
-      <h2 className="intro-line">Because this Moment is Timeless...</h2>
+      <div className="intro">
+        <h2 className="intro-line">Because this Moment is Timeless...</h2>
+        <Link className="btn-secondary" to="/all">
+          Shop now
+        </Link>
+      </div>
       <section className="home-images">
         <div>
           <img src={img2} alt="woman" />
         </div>
         <div>
-          <div className="home-images">
+          <div className="home-images-small">
             <img src={img1} alt="pearl necklase" />
             <img src={img3} alt="rings with blue stones" />
           </div>
-          <div className="home-images">
+          <div className="home-images-small">
             <img src={img4} alt="ring with a yellow stone" />
             <img src={img5} alt="diamonds" />
           </div>
@@ -27,27 +32,33 @@ const Home = () => {
         <p className="explore">Explore our collection:</p>
         <div className="icons">
           <div className="icon">
+            <img src={icon4} alt="diamond" />
+            <Link to="/all" className="btn-secondary">
+              All
+            </Link>
+          </div>
+          <div className="icon">
             <img src={icon3} alt="diamond" />
             <Link to="/new" className="btn-secondary">
-              new
+              New
             </Link>
           </div>
           <div className="icon">
             <img src={icon1} alt="necklase" />
             <Link to="/luxury" className="btn-secondary">
-              luxury
+              Luxury
             </Link>
           </div>
           <div className="icon">
             <img src={icon5} alt="ring" />
             <Link to="/gifts" className="btn-secondary">
-              gifts
+              Gifts
             </Link>
           </div>
           <div className="icon">
             <img src={icon2} alt="pearl necklase" />
-            <Link to="/sale" className="btn-secondary">
-              sale
+            <Link to="/sale" className="btn-primary">
+              Sale
             </Link>
           </div>
         </div>
