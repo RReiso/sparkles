@@ -31,19 +31,29 @@ const Header = () => {
         </Link>
         <ul className="nav-list">
           <li>
-            <Link to="/all">All</Link>
+            <Link to="/all" onClick={toggleHamburger}>
+              All
+            </Link>
           </li>
           <li>
-            <Link to="/new">New</Link>
+            <Link to="/new" onClick={toggleHamburger}>
+              New
+            </Link>
           </li>
           <li>
-            <Link to="/luxury">Luxury</Link>
+            <Link to="/luxury" onClick={toggleHamburger}>
+              Luxury
+            </Link>
           </li>
           <li>
-            <Link to="/gifts">Gifts</Link>
+            <Link to="/gifts" onClick={toggleHamburger}>
+              Gifts
+            </Link>
           </li>
           <li>
-            <Link to="/sale">Sale</Link>
+            <Link to="/sale" onClick={toggleHamburger}>
+              Sale
+            </Link>
           </li>
         </ul>
         <ShoppingBag hamNav={false} />
