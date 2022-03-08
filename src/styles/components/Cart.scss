@@ -1,0 +1,58 @@
+@use "../abstracts/variables.scss" as *;
+@use "../abstracts/mixins.scss" as *;
+
+.empty-bag {
+  padding: 1.5rem;
+  p {
+    padding: 0.5rem 0;
+  }
+}
+
+.order-title {
+  margin: 5rem 1rem 0;
+}
+
+.order {
+  @include shadow;
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  margin: 0.5rem 1rem 1rem;
+  border: 1px solid rgb(236, 233, 235);
+  padding: 0 0.5rem;
+  .remove {
+    font-size: 1.25rem;
+    margin: 0 0 0 auto;
+  }
+  .cart-item {
+    border-bottom: 1px solid rgb(236, 233, 235);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0.5rem 0.25rem;
+    &-main-info {
+      display: flex;
+      // justify-content: space-between;
+      img {
+        width: 50%;
+      }
+      p {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        padding-left: 0.75rem;
+        line-height: 25px;
+      }
+    }
+    &-quantity {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 0.5rem;
+    }
+    .quantity-buttons * {
+      font-weight: 600;
+      margin: 0 0.25rem;
+    }
+  }
+}

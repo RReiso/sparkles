@@ -4,7 +4,7 @@ import { ShopContext } from "../context/Context.js";
 import BagDropdown from "./BagDropdown";
 import "../styles/components/ShoppingBag.scss";
 
-const ShoppingBag = ({ hamNav }) => {
+const ShoppingBag = ({ hamNav, setActiveLink }) => {
   const { state } = useContext(ShopContext);
   const [totalBagItems, setTotalBagItems] = useState(0);
 
@@ -17,7 +17,7 @@ const ShoppingBag = ({ hamNav }) => {
 
   return (
     <div id="bag-icon" className={hamNav ? "ham-bag" : "d-nav"}>
-      <Link to="/cart">
+      <Link to="/cart" onClick={() => setActiveLink("")}>
         <span
           className="p1 fa-stack fa-2x has-badge"
           data-count={totalBagItems}

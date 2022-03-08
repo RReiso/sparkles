@@ -24,7 +24,7 @@ const Header = () => {
         <Link className="nav-title" to="/" onClick={() => setActiveLink("")}>
           <p>Sparkles</p>
         </Link>
-        <ShoppingBag hamNav={true} />
+        <ShoppingBag hamNav={true} setActiveLink={setActiveLink} />
       </div>
       <div className={isHamNavOpen === true ? "nav showNav" : "nav"}>
         <Link
@@ -39,7 +39,7 @@ const Header = () => {
             <Link
               to="/all"
               onClick={toggleHamburger}
-              className={activeLink === "all" && "active-link"}
+              className={activeLink === "all" ? "active-link" : undefined}
             >
               All
             </Link>
@@ -48,7 +48,7 @@ const Header = () => {
             <Link
               to="/new"
               onClick={toggleHamburger}
-              className={activeLink === "new" && "active-link"}
+              className={activeLink === "new" ? "active-link" : undefined}
             >
               New
             </Link>
@@ -57,7 +57,7 @@ const Header = () => {
             <Link
               to="/luxury"
               onClick={toggleHamburger}
-              className={activeLink === "luxury" && "active-link"}
+              className={activeLink === "luxury" ? "active-link" : undefined}
             >
               Luxury
             </Link>
@@ -66,7 +66,7 @@ const Header = () => {
             <Link
               to="/gifts"
               onClick={toggleHamburger}
-              className={activeLink === "gifts" && "active-link"}
+              className={activeLink === "gifts" ? "active-link" : undefined}
             >
               Gifts
             </Link>
@@ -75,13 +75,13 @@ const Header = () => {
             <Link
               to="/sale"
               onClick={toggleHamburger}
-              className={activeLink === "sale" && "active-link"}
+              className={activeLink === "sale" ? "active-link" : undefined}
             >
               Sale
             </Link>
           </li>
         </ul>
-        <ShoppingBag hamNav={false} />
+        <ShoppingBag hamNav={false} setActiveLink={setActiveLink} />
       </div>
     </nav>
   );
