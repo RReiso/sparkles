@@ -18,7 +18,7 @@ const capitalize = (words) => {
 const products = images.map((image, idx) => {
   return {
     id: idx,
-    name: capitalize(lorem.generateWords(2)),
+    name: capitalize(lorem.generateWords(3)),
     image: image,
     price: randomFloat(2000, 9999).toFixed(2),
     description: lorem.generateSentences(2),

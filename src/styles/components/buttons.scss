@@ -5,4 +5,10 @@
   .btn-#{$color} {
     @include btn($value);
   }
+}
+
+@each $size, $value in $btn-sizes {
+  .btn-#{$size} {
+    @include btn-size($value);
+  }
 } ;

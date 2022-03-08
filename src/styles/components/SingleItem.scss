@@ -1,11 +1,56 @@
-img {
-  width: 20rem;
+@use "../abstracts/variables.scss" as *;
+
+.all-items {
+  margin-top: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
 }
 
 .item {
-  margin: 4rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background-color: $white;
+  border: 1px solid rgb(236, 233, 235);
+  border-radius: 3px;
+  margin: 1.5rem 0.5rem;
+  &-info {
+    line-height: 20px;
+    padding: 0.5rem 0;
+  }
+  .price {
+    text-align: center;
+  }
+  p {
+    padding: 0.5rem 1rem;
+  }
+  img {
+    width: 100%;
+  }
+  button {
+    align-self: flex-end;
+    display: block;
+    margin: 1rem auto;
+  }
 }
 
 .old-price {
   text-decoration: line-through;
+}
+
+@media (min-width: 41em) {
+  .all-items {
+    flex-direction: row;
+    .item {
+      max-width: 20rem;
+      margin: 0.75rem;
+      min-height: 35rem;
+      &-info {
+        min-height: 12rem;
+      }
+    }
+  }
 }

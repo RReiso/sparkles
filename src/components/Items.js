@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { useLocation } from "react-router";
 import { ShopContext } from "../context/Context.js";
 import SingleItem from "./SingleItem.js";
+import "../styles/components/SingleItem.scss";
 
 const Items = () => {
   const { state } = useContext(ShopContext);
@@ -13,19 +14,22 @@ const Items = () => {
   }, [pathname]);
 
   return (
-    <div>
-      <p>{currentCategory}</p>
-      {currentCategory === "all"
-        ? state.products.map((item) => {
-            return <SingleItem key={item.id} item={item} />;
-          })
-        : state.products.map((item) => {
-            //return items with currentCategory(new, sale etc) set to 'true'
-            return (
-              item[currentCategory] && <SingleItem key={item.id} item={item} />
-            );
-          })}
-    </div>
+    <main>
+      <section className="all-items">
+        {currentCategory === "all"
+          ? state.products.map((item) => {
+              return <SingleItem key={item.id} item={item} />;
+            })
+          : state.products.map((item) => {
+              //return items with currentCategory(new, sale etc) set to 'true'
+              return (
+                item[currentCategory] && (
+                  <SingleItem key={item.id} item={item} />
+                )
+              );
+            })}
+      </section>
+    </main>
   );
 };
 

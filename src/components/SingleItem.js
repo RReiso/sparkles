@@ -1,4 +1,5 @@
 import { useContext, useState, useEffect } from "react";
+import ReactSparkle from "react-sparkle";
 import { ShopContext } from "../context/Context.js";
 import "../styles/components/SingleItem.scss";
 
@@ -6,7 +7,7 @@ const SingleItem = ({ item }) => {
   const { id, name, price, description, image, inStock, sale } = item;
   const { state, dispatch } = useContext(ShopContext);
   const [priceWithDiscount, setPriceWithDiscount] = useState(price);
-  const [onhover, setOnhover] = useState(false);
+  const [onHover, setOnHover] = useState(false);
 
   useEffect(() => {
     if (sale) {
@@ -31,29 +32,51 @@ const SingleItem = ({ item }) => {
   return (
     <article
       className="item"
-      onMouseEnter={() => setOnhover(true)}
-      onMouseLeave={() => setOnhover(false)}
+      onMouseEnter={() => setOnHover(true)}
+      onMouseLeave={() => setOnHover(false)}
     >
-      <p>{name}</p>
-      {sale ? (
-        <p>
-          <span className="old-price">{price}</span>
-          <span> {priceWithDiscount}</span>
-        </p>
-      ) : (
-        <p>{price}</p>
+      <div className="item-info">
+        <p style={{ fontWeight: "bolder" }}>{name}</p>
+        <p>{description}</p>
+        {sale ? (
+          <p className="price">
+            $ <span className="old-price">{price}</span>
+            <span> {priceWithDiscount}</span>
+          </p>
+        ) : (
+          <p className="price">${price}</p>
+        )}
+      </div>
+      <div style={{ position: "relative" }}>
+        {onHover && (
+          <ReactSparkle
+            color={"#ffffe0"}
+            minSize={8}
+            maxSize={15}
+            fadeOutSpeed={25}
+            overflowPx={0}
+            flickerSpeed={"slowest"}
+          />
+        )}
+        <img src={image} alt={`${name} - jewelery`} />
+      </div>
+      {isInCart(id) && (
+        <button
+          className="btn-warning btn-sm"
+          onClick={() => removeFromBag(id)}
+        >
+          Remove From Bag
+        </button>
       )}
-      <p>{description}</p>
-      <img src={image} alt="" />
-      {isInCart(id) && onhover && (
-        <button onClick={() => removeFromBag(id)}>Remove From Bag</button>
-      )}
-      {!isInCart(id) && onhover && inStock && (
-        <button onClick={() => addToBag(id, name, image, priceWithDiscount)}>
+      {!isInCart(id) && inStock && (
+        <button
+          className="btn-secondary btn-sm"
+          onClick={() => addToBag(id, name, image, priceWithDiscount)}
+        >
           Add To Bag
         </button>
       )}
-      {onhover && !inStock && <p>Out of stock</p>}
+      {!inStock && <p style={{ fontSize: "0.75rem" }}>Out of stock</p>}
     </article>
   );
 };

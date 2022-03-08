@@ -9,7 +9,7 @@ const Home = () => {
     <main>
       <div className="intro">
         <h2 className="intro-line">Because this Moment is Timeless...</h2>
-        <Link className="btn-secondary" to="/all">
+        <Link className="btn-secondary btn-md" to="/all">
           Shop now
         </Link>
       </div>
@@ -33,31 +33,31 @@ const Home = () => {
         <div className="icons">
           <div className="icon">
             <img src={icon4} alt="diamond" />
-            <Link to="/all" className="btn-secondary">
+            <Link to="/all" className="btn-secondary btn-sm">
               All
             </Link>
           </div>
           <div className="icon">
             <img src={icon3} alt="diamond" />
-            <Link to="/new" className="btn-secondary">
+            <Link to="/new" className="btn-secondary btn-sm">
               New
             </Link>
           </div>
           <div className="icon">
             <img src={icon1} alt="necklase" />
-            <Link to="/luxury" className="btn-secondary">
+            <Link to="/luxury" className="btn-secondary btn-sm">
               Luxury
             </Link>
           </div>
           <div className="icon">
             <img src={icon5} alt="ring" />
-            <Link to="/gifts" className="btn-secondary">
+            <Link to="/gifts" className="btn-secondary btn-sm">
               Gifts
             </Link>
           </div>
           <div className="icon">
             <img src={icon2} alt="pearl necklase" />
-            <Link to="/sale" className="btn-primary">
+            <Link to="/sale" className="btn-primary btn-sm">
               Sale
             </Link>
           </div>

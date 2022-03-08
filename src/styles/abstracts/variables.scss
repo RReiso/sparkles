@@ -1,17 +1,22 @@
 $pink: #d12064;
 $blue: #1a3048;
-$gold: #dbaf37;
-$black: #292628;
+$dusty-rose: #916567;
+$black: #2b2729;
 $white: #faf5fc;
 
 $primary: $pink;
 $secondary: $blue;
-$warning: $gold;
+$warning: $dusty-rose;
 $dark: $black;
 $light: $white;
 
 $theme-colors: (
   "primary": $pink,
   "secondary": $blue,
-  "warning": $gold,
+  "warning": $dusty-rose,
+);
+
+$btn-sizes: (
+  "sm": 0.5rem 0.75rem,
+  "md": 0.75rem 1rem,
 );

@@ -39,7 +39,8 @@
   width: 100%;
   li {
     padding: 0.25rem 0.5rem;
-    a:hover {
+    a:hover,
+    a:focus {
       color: $primary;
     }
   }
