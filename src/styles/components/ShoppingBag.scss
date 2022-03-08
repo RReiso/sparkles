@@ -18,7 +18,7 @@
     text-align: center;
     top: 8%;
   }
-  &:hover .dropdown-content {
+  &:hover .dropdown {
     display: none;
   }
 }
@@ -32,7 +32,7 @@
 }
 
 @media (min-width: 41em) {
-  #bag-icon:hover .dropdown-content {
+  #bag-icon:hover .dropdown {
     display: block;
   }
 

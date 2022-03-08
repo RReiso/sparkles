@@ -41,10 +41,7 @@ const SingleItem = ({ item }) => {
         {sale ? (
           <p className="price">
             $ <span className="old-price">{price}</span>
-            <spa style={{ color: "#d12064" }} n>
-              {" "}
-              {priceWithDiscount}
-            </spa>
+            <spa style={{ color: "#d12064" }}> {priceWithDiscount}</spa>
           </p>
         ) : (
           <p className="price">${price}</p>
