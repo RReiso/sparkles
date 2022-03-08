@@ -5,6 +5,7 @@ import { useState } from "react";
 
 const Header = () => {
   const [isHamNavOpen, setIsHamNavOpen] = useState(false);
+  const [activeLink, setActiveLink] = useState("");
 
   const toggleHamburger = () => {
     setIsHamNavOpen(!isHamNavOpen);
@@ -20,38 +21,62 @@ const Header = () => {
         >
           &#9776;
         </button>
-        <Link className="nav-title" to="/">
+        <Link className="nav-title" to="/" onClick={() => setActiveLink("")}>
           <p>Sparkles</p>
         </Link>
         <ShoppingBag hamNav={true} />
       </div>
       <div className={isHamNavOpen === true ? "nav showNav" : "nav"}>
-        <Link className="nav-title d-nav" to="/">
+        <Link
+          className="nav-title d-nav"
+          to="/"
+          onClick={() => setActiveLink("")}
+        >
           <p>Sparkles</p>
         </Link>
         <ul className="nav-list">
-          <li>
-            <Link to="/all" onClick={toggleHamburger}>
+          <li onClick={() => setActiveLink("all")}>
+            <Link
+              to="/all"
+              onClick={toggleHamburger}
+              className={activeLink === "all" && "active-link"}
+            >
               All
             </Link>
           </li>
-          <li>
-            <Link to="/new" onClick={toggleHamburger}>
+          <li onClick={() => setActiveLink("new")}>
+            <Link
+              to="/new"
+              onClick={toggleHamburger}
+              className={activeLink === "new" && "active-link"}
+            >
               New
             </Link>
           </li>
-          <li>
-            <Link to="/luxury" onClick={toggleHamburger}>
+          <li onClick={() => setActiveLink("luxury")}>
+            <Link
+              to="/luxury"
+              onClick={toggleHamburger}
+              className={activeLink === "luxury" && "active-link"}
+            >
               Luxury
             </Link>
           </li>
-          <li>
-            <Link to="/gifts" onClick={toggleHamburger}>
+          <li onClick={() => setActiveLink("gifts")}>
+            <Link
+              to="/gifts"
+              onClick={toggleHamburger}
+              className={activeLink === "gifts" && "active-link"}
+            >
               Gifts
             </Link>
           </li>
-          <li>
-            <Link to="/sale" onClick={toggleHamburger}>
+          <li onClick={() => setActiveLink("sale")}>
+            <Link
+              to="/sale"
+              onClick={toggleHamburger}
+              className={activeLink === "sale" && "active-link"}
+            >
               Sale
             </Link>
           </li>
