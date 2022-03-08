@@ -18,11 +18,14 @@
   border-radius: 3px;
   margin: 1.5rem 0.5rem;
   &-info {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
     line-height: 20px;
     padding: 0.5rem 0;
   }
   .price {
-    text-align: center;
+    font-weight: 600;
   }
   p {
     padding: 0.5rem 1rem;
