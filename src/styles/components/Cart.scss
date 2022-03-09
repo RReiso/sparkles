@@ -84,16 +84,19 @@
   }
   .order {
     margin: 0.5rem auto 1rem;
-    max-width: 44rem;
+    max-width: 40rem;
     padding: 2rem;
     .remove {
       font-size: 1.5rem;
-      margin: 0 0 auto 0;
     }
 
     .cart-item {
-      flex-direction: row;
-      justify-content: space-between;
+      &-all {
+        padding-top: 0.25rem;
+        display: flex;
+        justify-content: space-between;
+      }
+
       &-main-info {
         img {
           width: 8rem;

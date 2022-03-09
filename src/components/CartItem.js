@@ -19,29 +19,31 @@ const CartItem = ({ id, name, image, price, quantity }) => {
       <span className="remove" onClick={() => removeFromBag(id)}>
         <i className="circle fa fa-solid fa-times-circle"></i>
       </span>
-      <div className="cart-item-main-info">
-        <img src={image} alt={name} />
-        <p>
-          <span>{name}</span>
-          <span>${price}</span>
-        </p>
-      </div>
-      <div className="cart-item-quantity">
-        <span>${(price * quantity).toFixed(2)}</span>
-        <div className="quantity-buttons">
-          <button
-            className="btn-sm btn-primary"
-            onClick={() => updateQuantity(id, quantity - 1)}
-          >
-            −
-          </button>
-          <span>{quantity}</span>
-          <button
-            className="btn-sm btn-primary"
-            onClick={() => updateQuantity(id, quantity + 1)}
-          >
-            +
-          </button>
+      <div className="cart-item-all">
+        <div className="cart-item-main-info">
+          <img src={image} alt={name} />
+          <p>
+            <span>{name}</span>
+            <span>${price}</span>
+          </p>
+        </div>
+        <div className="cart-item-quantity">
+          <span>${(price * quantity).toFixed(2)}</span>
+          <div className="quantity-buttons">
+            <button
+              className="btn-sm btn-primary"
+              onClick={() => updateQuantity(id, quantity - 1)}
+            >
+              −
+            </button>
+            <span>{quantity}</span>
+            <button
+              className="btn-sm btn-primary"
+              onClick={() => updateQuantity(id, quantity + 1)}
+            >
+              +
+            </button>
+          </div>
         </div>
       </div>
     </article>
