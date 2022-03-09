@@ -21,6 +21,11 @@ const shopReducer = (state, action) => {
             : item.quantity
         ),
       };
+    case "resetCart":
+      return {
+        ...state,
+        cart: [],
+      };
     default:
       return state;
   }

@@ -5,7 +5,7 @@ import CartItem from "./CartItem.js";
 import "../styles/components/Cart.scss";
 
 const Cart = () => {
-  const { state } = useContext(ShopContext);
+  const { state, dispatch } = useContext(ShopContext);
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
   const [total, setTotal] = useState(0);
@@ -28,6 +28,7 @@ const Cart = () => {
 
   const handleCheckout = () => {
     alert("Thank you for your order!");
+    dispatch({ type: "resetCart" });
   };
 
   return (
