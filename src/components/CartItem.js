@@ -33,7 +33,7 @@ const CartItem = ({ id, name, image, price, quantity }) => {
             className="btn-sm btn-primary"
             onClick={() => updateQuantity(id, quantity - 1)}
           >
-            -
+            −
           </button>
           <span>{quantity}</span>
           <button
