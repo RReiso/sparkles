@@ -30,14 +30,14 @@ const CartItem = ({ id, name, image, price, quantity }) => {
         <span>${(price * quantity).toFixed(2)}</span>
         <div className="quantity-buttons">
           <button
-            className="btn-sm btn-secondary"
+            className="btn-sm btn-primary"
             onClick={() => updateQuantity(id, quantity - 1)}
           >
             -
           </button>
           <span>{quantity}</span>
           <button
-            className="btn-sm btn-secondary"
+            className="btn-sm btn-primary"
             onClick={() => updateQuantity(id, quantity + 1)}
           >
             +

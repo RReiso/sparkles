@@ -62,7 +62,7 @@ const SingleItem = ({ item }) => {
       </div>
       {isInCart(id) && (
         <button
-          className="btn-warning btn-sm"
+          className="btn-secondary btn-sm"
           onClick={() => removeFromBag(id)}
         >
           Remove From Bag
@@ -70,7 +70,7 @@ const SingleItem = ({ item }) => {
       )}
       {!isInCart(id) && inStock && (
         <button
-          className="btn-secondary btn-sm"
+          className="btn-primary btn-sm"
           onClick={() => addToBag(id, name, image, priceWithDiscount)}
         >
           Add To Bag

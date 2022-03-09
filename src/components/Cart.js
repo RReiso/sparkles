@@ -48,30 +48,30 @@ const Cart = () => {
             ))}
             <div className="delivery-info">
               <p>
-                <i className="fa fa-truck" aria-hidden="true"></i>Order will be
+                <i className="fa fa-truck" aria-hidden="true"></i> Order will be
                 shipped in 24 hours
               </p>
               <p>
-                <i className="fa fa-calendar-check-o" aria-hidden="true"></i>
+                <i className="fa fa-calendar-check-o" aria-hidden="true"></i>{" "}
                 Same day delivery available for orders before 12pm
               </p>
               <p>
-                <i className="fa fa-gift" aria-hidden="true"></i>Gift options
+                <i className="fa fa-gift" aria-hidden="true"></i> Gift options
                 available
               </p>
             </div>
             <div className="summary">
               <h3>Summary</h3>
               <p>
-                Subtotal:<span>{subtotal.toFixed(2)}</span>
+                Subtotal: <span>{subtotal.toFixed(2)}</span>
               </p>
               <p>
                 Tax: <span>{tax.toFixed(2)}</span>
               </p>
-              <p>
-                Order Total:<span>{total.toFixed(2)}</span>
+              <p className="total">
+                Order Total: $<span>{total.toFixed(2)}</span>
               </p>
-              <button onClick={handleCheckout} className="btn btn-warning">
+              <button onClick={handleCheckout} className="btn-md btn-secondary">
                 CHECKOUT
               </button>
             </div>
@@ -79,7 +79,7 @@ const Cart = () => {
         ) : (
           <div className="empty-bag">
             <p>Your bag is currently empty!</p>
-            <Link to="/all" className="btn-primary btn-sm">
+            <Link to="/all" className="btn-accent btn-sm">
               Start shopping
             </Link>
           </div>

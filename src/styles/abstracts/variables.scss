@@ -4,16 +4,16 @@ $dusty-rose: #916567;
 $black: #2b2729;
 $white: #faf5fc;
 
-$primary: $pink;
-$secondary: $blue;
-$warning: $dusty-rose;
+$accent: $pink;
+$primary: $blue;
+$secondary: $dusty-rose;
 $dark: $black;
 $light: $white;
 
 $theme-colors: (
-  "primary": $pink,
-  "secondary": $blue,
-  "warning": $dusty-rose,
+  "accent": $pink,
+  "primary": $blue,
+  "secondary": $dusty-rose,
 );
 
 $btn-sizes: (

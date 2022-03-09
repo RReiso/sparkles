@@ -55,4 +55,24 @@
       margin: 0 0.25rem;
     }
   }
+
+  .delivery-info {
+    margin: 0.5rem;
+    i {
+      font-size: 1.25rem;
+      line-height: 25px;
+      color: $primary;
+    }
+  }
+  .summary {
+    margin: 0.5rem;
+    line-height: 25px;
+    .total {
+      font-weight: 600;
+    }
+    button {
+      display: block;
+      margin: 1rem auto;
+    }
+  }
 }

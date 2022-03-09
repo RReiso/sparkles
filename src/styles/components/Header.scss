@@ -41,7 +41,7 @@
     padding: 0.25rem 0.5rem;
     a:hover,
     a:focus {
-      color: $primary;
+      color: $accent;
     }
   }
 }
@@ -71,7 +71,7 @@
 }
 
 .active-link {
-  color: $primary;
+  color: $accent;
 }
 
 @media (min-width: 41em) {
