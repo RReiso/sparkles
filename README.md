@@ -17,8 +17,6 @@ A React jewelery shopping cart built using Context API.
 
 ## Key Features
 
-User:
-
 - Browse items
 - Add/remove from cart
 - Update quantities, totals
@@ -30,7 +28,7 @@ User:
   <img src ="./public/images/home.png" width="700"></p>
  <p align="center">
   <img src="./public/images/mobile.png" width="300">
-  <img src="./public/images/dropdown.png" width="500">
+  <img src="./public/images/dropdown.png" width="600">
   </p>
  <p align="center">
   <img src ="./public/images/order.png" width="500"></p>
