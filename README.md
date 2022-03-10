@@ -4,7 +4,7 @@
 <h3 align="center">Make the life's moments sparkle</h3>
 <p align="center">
   <img src="https://img.shields.io/badge/JavaScript-yellow">
-  <img src="https://img.shields.io/badge/react-blue">
+  <img src="https://img.shields.io/badge/React-blue">
   <img src ="https://img.shields.io/badge/SASS-pink">
 </p>
 <p align="center">
