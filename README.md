@@ -13,7 +13,7 @@
 
 ## Description
 
-A React jewelery shopping cart built using Context API.
+A React jewellery shopping cart built using Context API.
 
 ## Key Features
 
