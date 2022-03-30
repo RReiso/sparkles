@@ -1,3 +1,4 @@
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Cart from "./components/Cart";
 import Footer from "./components/Footer";
@@ -8,12 +9,18 @@ import PageNotFound from "./components/PageNotFound";
 import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
+  const [activeLink, setActiveLink] = useState("");
+
   return (
     <BrowserRouter>
       <ScrollToTop>
-        <Header />
+        <Header activeLink={activeLink} setActiveLink={setActiveLink} />
         <Routes>
-          <Route path="/" exact element={<Home />} />
+          <Route
+            path="/"
+            exact
+            element={<Home setActiveLink={setActiveLink} />}
+          />
           <Route path="/all" element={<Items />} />
           <Route path="/new" element={<Items />} />
           <Route path="/gifts" element={<Items />} />
