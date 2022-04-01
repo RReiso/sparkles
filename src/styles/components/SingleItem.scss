@@ -1,5 +1,9 @@
 @use "../abstracts/variables.scss" as *;
-
+.title {
+  text-align: center;
+  margin-top: 2rem;
+  text-transform: uppercase;
+}
 .all-items {
   margin-top: 1rem;
   margin-bottom: 1rem;
@@ -46,6 +50,9 @@
 }
 
 @media (min-width: 41em) {
+  .title {
+    margin-top: 3rem;
+  }
   .all-items {
     margin-top: 2rem;
     flex-direction: row;

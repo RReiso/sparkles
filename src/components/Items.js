@@ -15,6 +15,7 @@ const Items = () => {
 
   return (
     <main>
+      <h4 className="title">- {currentCategory} -</h4>
       <section className="all-items">
         {currentCategory === "all"
           ? state.products.map((item) => {

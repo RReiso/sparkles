@@ -9,22 +9,20 @@ import ScrollToTop from "./components/ScrollToTop";
 
 function App() {
   return (
-    <BrowserRouter>
-      <ScrollToTop>
-        <Header />
-        <Routes>
-          <Route path="/" exact element={<Home />} />
-          <Route path="/all" element={<Items />} />
-          <Route path="/new" element={<Items />} />
-          <Route path="/gifts" element={<Items />} />
-          <Route path="/luxury" element={<Items />} />
-          <Route path="/sale" element={<Items />} />
-          <Route path="/cart" element={<Cart />} />
-          <Route path="*" element={<PageNotFound />} />
-        </Routes>
-        <Footer />
-      </ScrollToTop>
-    </BrowserRouter>
+    <ScrollToTop>
+      <Header />
+      <Routes>
+        <Route path="/" exact element={<Home />} />
+        <Route path="/all" element={<Items />} />
+        <Route path="/new" element={<Items />} />
+        <Route path="/gifts" element={<Items />} />
+        <Route path="/luxury" element={<Items />} />
+        <Route path="/sale" element={<Items />} />
+        <Route path="/cart" element={<Cart />} />
+        <Route path="*" element={<PageNotFound />} />
+      </Routes>
+      <Footer />
+    </ScrollToTop>
   );
 }
 
