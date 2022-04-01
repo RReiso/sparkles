@@ -27,6 +27,7 @@ const ShoppingBag = ({ hamNav, setActiveLink }) => {
             data-count="4b"
           ></i>
         </span>
+        <span className="sr-only">Cart</span>
       </Link>
       <BagDropdown />
     </div>
