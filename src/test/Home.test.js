@@ -11,20 +11,19 @@ describe("Home component", () => {
     );
   };
 
-  beforeEach(() => {
+  test("should show image of a woman with a correct source", () => {
     setup();
-    expect(screen.getByText(/moment/i)).toBeInTheDocument();
-  });
-
-  test("should render image of a woman on the home page", () => {
+    // expect(screen.getByAltText("woman").src).toBe(full-path);
     expect(screen.getByAltText("woman")).toHaveAttribute("src", "img2.jpg");
   });
 
   test("should render six links", async () => {
+    setup();
     expect(screen.getAllByRole("link").length).toEqual(6);
   });
 
   test("'Shop now' button should link to /all", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "Shop now" })).toHaveAttribute(
       "href",
       "/all"
@@ -32,30 +31,35 @@ describe("Home component", () => {
   });
 
   test("'Sale' button should link to /sale", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "Sale" })).toHaveAttribute(
       "href",
       "/sale"
     );
   });
   test("'All' button should link to /all", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "All" })).toHaveAttribute(
       "href",
       "/all"
     );
   });
   test("'New' button should link to /new", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "New" })).toHaveAttribute(
       "href",
       "/new"
     );
   });
   test("'Gifts' button should link to /gifts", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "Gifts" })).toHaveAttribute(
       "href",
       "/gifts"
     );
   });
   test("'Luxury' button should link to /luxury", async () => {
+    setup();
     expect(screen.getByRole("link", { name: "Luxury" })).toHaveAttribute(
       "href",
       "/luxury"

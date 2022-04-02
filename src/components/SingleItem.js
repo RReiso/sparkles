@@ -36,7 +36,7 @@ const SingleItem = ({ item }) => {
       onMouseLeave={() => setOnHover(false)}
     >
       <div className="item-info">
-        <p style={{ fontWeight: "bolder" }}>{name}</p>
+        <h4 style={{ fontWeight: "bolder", margin: "1rem" }}>{name}</h4>
         <p>{description}</p>
         {sale ? (
           <p className="price">
@@ -76,7 +76,11 @@ const SingleItem = ({ item }) => {
           Add To Bag
         </button>
       )}
-      {!inStock && <p style={{ fontSize: "0.75rem" }}>Out of stock</p>}
+      {!inStock && (
+        <p role="note" style={{ fontSize: "0.75rem" }}>
+          Out of stock
+        </p>
+      )}
     </article>
   );
 };
