@@ -10,14 +10,18 @@ const CartItem = ({ id, name, image, price, quantity }) => {
 
   const updateQuantity = (id, newQuantity) => {
     if (newQuantity > 0 && newQuantity < 6) {
-      dispatch({ type: "updateQuantity", payload: { id, newQuantity } });
+      dispatch({
+        type: "updateQuantity",
+        payload: { id, newQuantity },
+      });
     }
   };
 
   return (
     <article className="cart-item">
-      <span className="remove" onClick={() => removeFromBag(id)}>
+      <span role="button" className="remove" onClick={() => removeFromBag(id)}>
         <i className="circle fa fa-solid fa-times-circle"></i>
+        <span className="sr-only">Remove Item button</span>
       </span>
       <div className="cart-item-all">
         <div className="cart-item-main-info">
@@ -36,7 +40,7 @@ const CartItem = ({ id, name, image, price, quantity }) => {
             >
               −
             </button>
-            <span>{quantity}</span>
+            <span data-testid="quantity">{quantity}</span>
             <button
               className="btn-sm btn-primary"
               onClick={() => updateQuantity(id, quantity + 1)}
