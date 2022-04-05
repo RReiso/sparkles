@@ -1,4 +1,4 @@
-import { cleanup, render } from "@testing-library/react";
+import { render } from "@testing-library/react";
 import CartItem from "../components/CartItem";
 import Context, { ShopContext } from "../context/Context";
 import images from "../products/images";
@@ -30,8 +30,6 @@ const renderWithContext = (component) => {
     ...render(<Context value={ShopContext}>{component}</Context>),
   };
 };
-
-afterEach(cleanup);
 
 describe("shopReducer test", () => {
   const setup = () => {

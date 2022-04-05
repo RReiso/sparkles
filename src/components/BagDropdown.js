@@ -8,7 +8,7 @@ const BagDropdown = () => {
 
   useEffect(() => {
     const total = state.cart
-      .reduce((acc, item) => acc + Number(item.price), 0)
+      .reduce((acc, item) => acc + Number(item.price) * item.quantity, 0)
       .toFixed(2);
     setSubtotal(total);
   }, [state.cart]);
@@ -21,13 +21,24 @@ const BagDropdown = () => {
     <div className="dropdown">
       {state.cart.length > 0 ? (
         <>
+          <span
+            style={{
+              display: "flex",
+              justifyContent: "flex-end",
+              fontSize: "0.75rem",
+              marginRight: "1rem",
+            }}
+          >
+            Price per item
+          </span>
           {state.cart.map((item) => (
             <article className="dropdown-item" key={item.id}>
               <img src={item.image} alt={`${item.name}`} />
               <span>{item.name}</span>
               <span>${item.price}</span>
-              <span onClick={() => removeFromBag(item.id)}>
+              <span role="button" onClick={() => removeFromBag(item.id)}>
                 <i className="circle fa fa-solid fa-times-circle"></i>
+                <span className="sr-only">Remove Item button</span>
               </span>
             </article>
           ))}
