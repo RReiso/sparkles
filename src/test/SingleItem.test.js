@@ -11,7 +11,7 @@ const singleItemPropsInStock = {
   description: "Lorem ipsum sit amet dolor",
   image: images[0],
   inStock: true,
-  sale: true,
+  sale: false,
 };
 const singleItemPropsOutOfStock = {
   id: 2,
@@ -69,5 +69,55 @@ describe("SingleItem component", () => {
       screen.queryByRole("button", { name: "Add To Bag" })
     ).not.toBeInTheDocument();
     expect(screen.getByText("Out of stock")).toBeInTheDocument();
+  });
+
+  test("should call dispatch when 'Add to Bag' button is clicked", () => {
+    const dispatch = jest.fn();
+    render(
+      <ShopContext.Provider value={{ state: { cart: [] }, dispatch }}>
+        <SingleItem item={singleItemPropsInStock} />
+      </ShopContext.Provider>
+    );
+    userEvent.click(screen.getByRole("button", { name: "Add To Bag" }));
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: "addToBag",
+      payload: {
+        id: singleItemPropsInStock.id,
+        name: singleItemPropsInStock.name,
+        image: singleItemPropsInStock.image,
+        price: singleItemPropsInStock.price,
+      },
+    });
+  });
+
+  test("should call dispatch when 'Remove From Bag' button is clicked", () => {
+    const dispatch = jest.fn();
+    render(
+      <ShopContext.Provider
+        value={{
+          state: {
+            cart: [
+              {
+                id: 1,
+                name: "Lorem Ipsum Dolor",
+                image: images[0],
+                price: 3000,
+                quantity: 1,
+              },
+            ],
+          },
+          dispatch,
+        }}
+      >
+        <SingleItem item={singleItemPropsInStock} />
+      </ShopContext.Provider>
+    );
+    userEvent.click(screen.getByRole("button", { name: "Remove From Bag" }));
+    expect(dispatch).toHaveBeenCalledTimes(1);
+    expect(dispatch).toHaveBeenCalledWith({
+      type: "removeFromBag",
+      payload: singleItemPropsInStock.id,
+    });
   });
 });
