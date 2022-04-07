@@ -38,14 +38,7 @@ const Cart = () => {
         {state.cart.length > 0 ? (
           <>
             {state.cart.map((item) => (
-              <CartItem
-                key={item.id}
-                id={item.id}
-                name={item.name}
-                image={item.image}
-                price={item.price}
-                quantity={item.quantity}
-              />
+              <CartItem key={item.id} {...item} />
             ))}
             <div className="delivery-info">
               <p>

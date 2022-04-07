@@ -5,7 +5,7 @@ const Footer = () => {
   return (
     <footer>
       <div className="webpage-info">
-        <p className="brand-name">Sparkles</p>
+        <h6 className="brand-name">Sparkles</h6>
         <div className="attribution">
           <p>Images:</p>
           <p>

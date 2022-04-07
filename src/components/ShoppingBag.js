@@ -21,12 +21,14 @@ const ShoppingBag = ({ hamNav, setActiveLink }) => {
         <span
           className="p1 fa-stack fa-2x has-badge"
           data-count={totalBagItems}
+          data-testid="count"
         >
           <i
             className="p3 fa fa-shopping-bag fa-stack-1x xfa-inverse"
             data-count="4b"
           ></i>
         </span>
+        <span className="sr-only">Cart</span>
       </Link>
       <BagDropdown />
     </div>
