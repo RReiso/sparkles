@@ -13,7 +13,7 @@
 
 ## Description
 
-A React jewelery shopping cart built using Context API.
+A React jewelery shopping cart built using Context API. This is the first front-end project that I have written tests for with React Testing Library. Writing tests has helped me write cleaner code, 'catch' some bugs and be more confident about refactoring my code.
 
 ## Key Features
 
@@ -60,7 +60,7 @@ Open http://localhost:3000 to view it in your browser.
 
 - lorem-ipsum: ^2.0.4
 - random-bool: ^1.0.2
-- random-float: ^3.0.0
+- random-float: ^2.0.0
 - react: ^17.0.2
 - react-dom: ^17.0.2
 - react-router-dom: ^6.2.1
