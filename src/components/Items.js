@@ -1,33 +1,22 @@
-import { useContext, useEffect, useState } from "react";
-import { useLocation } from "react-router";
+import { useContext } from "react";
 import { ShopContext } from "../context/Context.js";
 import SingleItem from "./SingleItem.js";
 import "../styles/components/SingleItem.scss";
 
-const Items = () => {
+const Items = ({ category }) => {
   const { state } = useContext(ShopContext);
-  const { pathname } = useLocation();
-  const [currentCategory, setCurrentCategory] = useState("all");
-
-  useEffect(() => {
-    setCurrentCategory(pathname.substring(1));
-  }, [pathname]);
 
   return (
     <main>
-      <h4 className="title">- {currentCategory} -</h4>
+      <h4 className="title">- {category} -</h4>
       <section className="all-items">
-        {currentCategory === "all"
+        {category === "all"
           ? state.products.map((item) => {
               return <SingleItem key={item.id} item={item} />;
             })
           : state.products.map((item) => {
-              //return items with currentCategory(new, sale etc) set to 'true'
-              return (
-                item[currentCategory] && (
-                  <SingleItem key={item.id} item={item} />
-                )
-              );
+              //return items with category(new, sale etc) set to 'true'
+              return item[category] && <SingleItem key={item.id} item={item} />;
             })}
       </section>
     </main>
