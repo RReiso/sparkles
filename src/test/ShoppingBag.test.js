@@ -82,6 +82,24 @@ describe("ShoppingBag component", () => {
     );
   });
 
+  test("should show number of items in cart", () => {
+    renderWithContext(
+      <MemoryRouter>
+        <ShoppingBag />
+      </MemoryRouter>,
+      mockFullCart
+    );
+
+    const itemsInCart = mockFullCart.state.cart.reduce((acc, item) => {
+      return acc + item.quantity;
+    }, 0);
+
+    expect(screen.getByTestId("count")).toHaveAttribute(
+      "data-count",
+      itemsInCart.toString()
+    );
+  });
+
   test("should call dispatch when 'remove item' button is clicked", () => {
     renderWithContext(
       <MemoryRouter>
