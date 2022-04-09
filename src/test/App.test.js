@@ -54,4 +54,24 @@ describe("App navigation testing", () => {
     expect(screen.getByText(/moment/i)).toBeInTheDocument();
     expect(window.scrollTo).toHaveBeenCalled();
   });
+
+  test("clicked link should have a class of 'active-link'", () => {
+    renderWithContext(
+      <MemoryRouter>
+        <App />
+      </MemoryRouter>
+    );
+
+    const linkNew = screen.getAllByRole("link", { name: "New" })[0];
+    const linkAll = screen.getAllByRole("link", { name: "All" })[0];
+    expect(linkNew.classList.contains("active-link")).toBe(false);
+    expect(linkAll.classList.contains("active-link")).toBe(false);
+
+    userEvent.click(linkNew);
+    expect(linkNew.classList.contains("active-link")).toBe(true);
+
+    userEvent.click(linkAll);
+    expect(linkAll.classList.contains("active-link")).toBe(true);
+    expect(linkNew.classList.contains("active-link")).toBe(false);
+  });
 });

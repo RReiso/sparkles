@@ -3,9 +3,8 @@ import ShoppingBag from "./ShoppingBag";
 import "../styles/components/Header.scss";
 import { useState } from "react";
 
-const Header = () => {
+const Header = ({ activeLink, setActiveLink }) => {
   const [isHamNavOpen, setIsHamNavOpen] = useState(false);
-  const [activeLink, setActiveLink] = useState("");
 
   const toggleHamburger = () => {
     setIsHamNavOpen(!isHamNavOpen);

@@ -1,5 +1,6 @@
 import { screen, render } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
+import { mockComponent } from "react-dom/test-utils";
 import { MemoryRouter } from "react-router";
 import Header from "../components/Header";
 import Context, { ShopContext } from "../context/Context";
@@ -83,25 +84,5 @@ describe("Header", () => {
     );
     const links = screen.getAllByRole("link", { name: "Cart" });
     expect(links.length).toBeGreaterThanOrEqual(1);
-  });
-
-  test("clicked link should have a class of 'active-link'", () => {
-    renderWithContext(
-      <MemoryRouter>
-        <Header />
-      </MemoryRouter>
-    );
-
-    const linkNew = screen.getByRole("link", { name: "New" });
-    const linkAll = screen.getByRole("link", { name: "All" });
-    expect(linkNew.classList.contains("active-link")).toBe(false);
-    expect(linkAll.classList.contains("active-link")).toBe(false);
-
-    userEvent.click(linkNew);
-    expect(linkNew.classList.contains("active-link")).toBe(true);
-
-    userEvent.click(linkAll);
-    expect(linkAll.classList.contains("active-link")).toBe(true);
-    expect(linkNew.classList.contains("active-link")).toBe(false);
   });
 });

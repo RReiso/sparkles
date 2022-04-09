@@ -4,7 +4,7 @@ import { ShopContext } from "../context/Context.js";
 import CartItem from "./CartItem.js";
 import "../styles/components/Cart.scss";
 
-const Cart = () => {
+const Cart = ({ setActiveLink }) => {
   const { state, dispatch } = useContext(ShopContext);
   const [subtotal, setSubtotal] = useState(0);
   const [tax, setTax] = useState(0);
@@ -73,7 +73,11 @@ const Cart = () => {
         ) : (
           <div className="empty-bag">
             <p>Your bag is currently empty!</p>
-            <Link to="/all" className="btn-accent btn-sm">
+            <Link
+              to="/all"
+              className="btn-accent btn-sm"
+              onClick={() => setActiveLink("all")}
+            >
               Start shopping
             </Link>
           </div>
