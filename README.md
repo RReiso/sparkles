@@ -13,7 +13,7 @@
 
 ## Description
 
-A React jewelery shopping cart built using Context API. This is the first front-end project that I have written tests for with React Testing Library. Writing tests has helped me write cleaner code, 'catch' some bugs and be more confident about refactoring my code.
+A React jewelry shopping cart built using Context API. This is the first front-end project that I have written tests for with React Testing Library. Writing tests has helped me write cleaner code, 'catch' some bugs and be more confident about refactoring my code.
 
 ## Key Features
 
